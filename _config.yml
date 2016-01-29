@@ -17,9 +17,9 @@ language: en
 icons:
   rss: true
   email:
-  github: planck
+  github: planck/planck
   bitbucket:
-  twitter: 
+  twitter:
   facebook:
   google_plus:
   tumblr:
