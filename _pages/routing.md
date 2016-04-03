@@ -45,3 +45,22 @@ class MyRouter extends Router.RouterHTTP{
 }
 await app.use(MyRouter);
 ```
+
+### Router structure
+Router is a class, extended from Planck's ```RouterHTTP```. In constructor of this class you should describe all routes, used in application. When Planck constructs your router, it passes some helpers as parameters, which you can use to describe your routes. This parameters are position agnostic, you can write their names in constructor's arguments it in any order. These parameters are:
+* Resource - function to describe REST resource. It takes 1 required and 2 optional parameters:
+  * name (String): resource name
+  * methods (Array of String): array with names of HTTP methods to generate within this resource. HTTP methods are always associates with controllers methods:
+    * GET /resource - ```readList```
+	* GET /resource/:id - ```read```
+	* POST /resource - ```create```
+	* PUT/PATCH /resource/:id - ```update```
+	* DELETE - ```delete```
+  * callback (Function)
+* Route
+  * url
+  * controller/method
+  * methods
+
+  Route also
+* rawRouter - plain [Express](http://expressjs.com/) app. You can use it if you want to use something specific, like [Passport](http://passportjs.org/) authorization.
